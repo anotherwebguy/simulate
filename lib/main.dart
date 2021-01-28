@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:simulate/splashScreen.dart';
 import 'package:simulate/src/home.dart';
 import 'package:provider/provider.dart';
 import 'package:simulate/src/data/simulations.dart';
@@ -21,6 +22,7 @@ void main() async {
           lazy: false,
           create: (context) => ThemeProvider(sharedPreferences),
         ),
+
       ],
       child: HomeCall(),
     ),
@@ -34,7 +36,7 @@ class HomeCall extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Simulate',
-      home: Home(),
+      home: AnimatedSplashScreen(),
       theme: theme.theme,
     );
   }
